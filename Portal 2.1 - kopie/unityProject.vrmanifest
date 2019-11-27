@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.portal2.1.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "D:\\Users\\Sacco\\Portal-2.1\\Portal 2.1 - kopie\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "Portal 2.1 [Testing]"
+        }
+      }
+    }
+  ]
+}
