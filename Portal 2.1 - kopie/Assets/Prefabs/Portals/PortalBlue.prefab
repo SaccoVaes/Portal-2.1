@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1326042712247141504
+--- !u!1 &8409309440365438157
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,60 +8,31 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1326042712247141507}
+  - component: {fileID: 8409309440843819474}
   m_Layer: 0
-  m_Name: Portal DestinationA
+  m_Name: PortalBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1326042712247141507
+--- !u!4 &8409309440843819474
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326042712247141504}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.000000030055123}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 1, y: 2, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1326042713208383124}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1 &1326042712290230021
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1326042712290230020}
-  m_Layer: 0
-  m_Name: Stereo Camera Head [Portal Surface]
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1326042712290230020
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326042712290230021}
-  m_LocalRotation: {x: -0, y: -0.92387956, z: -0, w: 0.38268343}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
-  m_LocalScale: {x: 0.33333337, y: 0.5, z: 0.33333337}
+  m_GameObject: {fileID: 8409309440365438157}
+  m_LocalRotation: {x: -0, y: 0.000000104308114, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.42, z: -0.02}
+  m_LocalScale: {x: 0.30775496, y: 0.43178874, z: 0.30775496}
   m_Children:
-  - {fileID: 1326042712336160431}
-  m_Father: {fileID: 1326042712888410322}
+  - {fileID: 8409309441237715519}
+  - {fileID: 8409309439902875938}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1326042712336160428
+--- !u!1 &8409309440419806885
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,8 +40,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1326042712336160431}
-  - component: {fileID: 1326042712336160430}
+  - component: {fileID: 8409309440419806882}
+  - component: {fileID: 8409309440419806883}
   m_Layer: 0
   m_Name: Stereo Camera Eye [Portal Surface]
   m_TagString: Untagged
@@ -78,27 +49,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1326042712336160431
+--- !u!4 &8409309440419806882
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326042712336160428}
+  m_GameObject: {fileID: 8409309440419806885}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.99999964, y: 1, z: 0.99999964}
   m_Children: []
-  m_Father: {fileID: 1326042712290230020}
+  m_Father: {fileID: 8409309441192132703}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &1326042712336160430
+--- !u!20 &8409309440419806883
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326042712336160428}
+  m_GameObject: {fileID: 8409309440419806885}
   m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
@@ -135,7 +106,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!1 &1326042712888410323
+--- !u!1 &8409309440487039884
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,12 +114,73 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1326042712888410322}
-  - component: {fileID: 1326042712888410313}
-  - component: {fileID: 1326042712888410318}
-  - component: {fileID: 1326042712888410319}
-  - component: {fileID: 1326042712888410316}
-  - component: {fileID: 1326042712888410317}
+  - component: {fileID: 8409309439902875938}
+  m_Layer: 0
+  m_Name: Portal DestinationB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8409309439902875938
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8409309440487039884}
+  m_LocalRotation: {x: -0, y: 0.99904835, z: -0, w: -0.04361838}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8409309440843819474}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 275, z: 0}
+--- !u!1 &8409309441192132702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8409309441192132703}
+  m_Layer: 0
+  m_Name: Stereo Camera Head [Portal Surface]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8409309441192132703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8409309441192132702}
+  m_LocalRotation: {x: -0, y: -0.92387956, z: -0, w: 0.38268343}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalScale: {x: 0.33333337, y: 0.5, z: 0.33333337}
+  m_Children:
+  - {fileID: 8409309440419806882}
+  m_Father: {fileID: 8409309441237715519}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8409309441237715518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8409309441237715519}
+  - component: {fileID: 8409309441237715512}
+  - component: {fileID: 8409309441237715515}
+  - component: {fileID: 8409309441237715514}
+  - component: {fileID: 8409309441237715517}
+  - component: {fileID: 8409309441237715516}
   m_Layer: 0
   m_Name: Portal Surface
   m_TagString: Untagged
@@ -156,36 +188,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1326042712888410322
+--- !u!4 &8409309441237715519
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326042712888410323}
+  m_GameObject: {fileID: 8409309441237715518}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 3, y: 2, z: 3}
   m_Children:
-  - {fileID: 1326042712290230020}
-  m_Father: {fileID: 1326042713208383124}
+  - {fileID: 8409309441192132703}
+  m_Father: {fileID: 8409309440843819474}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1326042712888410313
+--- !u!33 &8409309441237715512
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326042712888410323}
+  m_GameObject: {fileID: 8409309441237715518}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1326042712888410318
+--- !u!23 &8409309441237715515
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326042712888410323}
+  m_GameObject: {fileID: 8409309441237715518}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 0
@@ -217,34 +249,34 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1326042712888410319
+--- !u!65 &8409309441237715514
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326042712888410323}
+  m_GameObject: {fileID: 8409309441237715518}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 6.1232336e-17}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1326042712888410316
+--- !u!114 &8409309441237715517
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326042712888410323}
+  m_GameObject: {fileID: 8409309441237715518}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4f292fa301ee5844ba0ab54e5fb44b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasOrigin: {fileID: 1326042713208383124}
-  m_canvasOriginWorldPosition: {x: 1.414212, y: 0, z: -12.72792}
-  m_canvasOriginWorldRotation: {x: -0, y: 45, z: -0}
+  canvasOrigin: {fileID: 8409309440843819474}
+  m_canvasOriginWorldPosition: {x: 0, y: 0, z: 0}
+  m_canvasOriginWorldRotation: {x: -0, y: 135, z: -0}
   anchorTransform: {fileID: 0}
   m_anchorWorldPosition: {x: 0, y: 0, z: 0}
   m_anchorWorldRotation: {x: 0, y: 0, z: 0}
@@ -252,20 +284,20 @@ MonoBehaviour:
   useObliqueClip: 1
   useScissor: 1
   isUnlit: 0
-  stereoCameraHead: {fileID: 1326042712290230021}
-  stereoCameraEye: {fileID: 1326042712336160430}
+  stereoCameraHead: {fileID: 8409309441192132702}
+  stereoCameraEye: {fileID: 8409309440419806883}
   textureResolutionScale: 1
   ignoreWhenRender: []
   ignoreLayerName: StereoRender_Ignore
   reflectionOffset: 0.05
   isMirror: 0
---- !u!114 &1326042712888410317
+--- !u!114 &8409309441237715516
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326042712888410323}
+  m_GameObject: {fileID: 8409309441237715518}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b56a745a9b19606478ab24a5ea93e452, type: 3}
@@ -273,35 +305,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCollider: {fileID: 0}
   portalManger: {fileID: 0}
---- !u!1 &1326042713208383125
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1326042713208383124}
-  m_Layer: 0
-  m_Name: PortalB
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1326042713208383124
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326042713208383125}
-  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1326042712888410322}
-  - {fileID: 1326042712247141507}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
