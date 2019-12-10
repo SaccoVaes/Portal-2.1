@@ -113,9 +113,9 @@ MonoBehaviour:
   anchorTransform: {fileID: 0}
   m_anchorWorldPosition: {x: 0, y: 0, z: 0}
   m_anchorWorldRotation: {x: 0, y: 0, z: 0}
-  shouldRender: 1
-  useObliqueClip: 1
-  useScissor: 1
+  shouldRender: 0
+  useObliqueClip: 0
+  useScissor: 0
   isUnlit: 0
   stereoCameraHead: {fileID: 4781447795521819138}
   stereoCameraEye: {fileID: 4781447796084687248}

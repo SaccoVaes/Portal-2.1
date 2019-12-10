@@ -317,7 +317,7 @@ public class ArmSwinger : MonoBehaviour
    
 
     public SteamVR_Action_Single Squeeze;
-    public SteamVR_Action_Single TriggerPull;
+    public SteamVR_Action_Boolean TriggerPull;
     public SteamVR_Action_Boolean ButtonAPressed;
     public SteamVR_Action_Boolean ButtonBPressed;
     public SteamVR_Action_Boolean ButtonXPressed;
@@ -1704,13 +1704,13 @@ public class ArmSwinger : MonoBehaviour
         // StickPresssedDownLeft;
         // StickPresssedDownRight;
 
-        if (TriggerPull.GetAxis(SteamVR_Input_Sources.RightHand) > 0.5f)
+        if (TriggerPull.GetState(SteamVR_Input_Sources.RightHand))
             rightButtonPressed = true;
         else
             rightButtonPressed = false;
 
 
-        if (TriggerPull.GetAxis(SteamVR_Input_Sources.LeftHand) > 0.5f)
+        if (TriggerPull.GetState(SteamVR_Input_Sources.LeftHand))
             leftButtonPressed = true;
         else
             leftButtonPressed = false;

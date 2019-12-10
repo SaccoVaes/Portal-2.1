@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using HTC.UnityPlugin.StereoRendering;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.Extras;
@@ -17,22 +18,37 @@ public class PortalManager : MonoBehaviour
     //References to the walls/floors where the portals are located.
     private GameObject ParentBluePortal;
     private GameObject ParentRedPortal;
-    public GameObject RightHand;
-    public GameObject LeftHand;
 
+    //References to materials to set the wall behind the portals.
+    private MeshRenderer rendererParentBlue;
+    private MeshRenderer rendererParentRed;
+    public Material matBlue;
+    public Material matRed;
+    public Material matWall;
+
+    private PortalDoorCollideDetection PortalDetectionPortalBlue;
+    private PortalDoorCollideDetection PortalDetectionPortalRed;
+    public PortalSet Portalset;
+    public CapsuleCollider BodyCollider;
+
+    public SteamVR_LaserPointer laserPointer;
     public void Start()
     {
-        RightHand = GameObject.FindGameObjectWithTag("RightHand");
-        LeftHand = GameObject.FindGameObjectWithTag("LeftHand");
+        laserPointer.PointerOut += SpawnPortal;
     }
 
     //When the player releases, check if the portal can be spawned.
-    public void PortalFired(GameObject sender, PointerEventArgs e)
+    public void PortalFired(object sender, PointerEventArgs e)
     {
         if (CanSpawnPortal(e))
         {
             SpawnPortal(sender, e);
         }
+        if (ShouldInitialisePortal())
+        {
+            InitialisePortals();
+        }
+
     }
 
     //Method for checking if both portals are active. If only one, or none are active, the portals should not be activated.
@@ -42,9 +58,34 @@ public class PortalManager : MonoBehaviour
         return (BluePortal != null && RedPortal != null) ? true : false;
     }
 
-    //Initialise components 
+    //Initialise components of the portal to link them together.
     public void InitialisePortals()
     {
+        //Get the stereorenderer components
+        StereoRenderer StereoRendererPortalBlue = BluePortal.GetComponentInChildren<StereoRenderer>();
+        StereoRenderer StereoRendererPortalRed = RedPortal.GetComponentInChildren<StereoRenderer>();
+
+        //Set the destinations.
+        StereoRendererPortalBlue.anchorTransform = RedPortal.transform.GetChild(1);
+        StereoRendererPortalRed.anchorTransform = BluePortal.transform.GetChild(1);
+
+        //Set the should render boolean to true;
+        StereoRendererPortalBlue.shouldRender = true;
+        StereoRendererPortalRed.shouldRender = true;
+
+        //Set the color of the parent wall to x material;
+        rendererParentBlue.material = matBlue;
+        rendererParentRed.material = matRed;
+
+        //Set the portal Detection variables, so the player can teleport to its destination on contact.
+        PortalDetectionPortalBlue = BluePortal.GetComponentInChildren<PortalDoorCollideDetection>();
+        PortalDetectionPortalRed = RedPortal.GetComponentInChildren<PortalDoorCollideDetection>();
+
+        PortalDetectionPortalBlue.playerCollider = BodyCollider;
+        PortalDetectionPortalRed.playerCollider = BodyCollider;
+        PortalDetectionPortalBlue.portalManger = Portalset;
+        PortalDetectionPortalRed.portalManger = Portalset;
+
 
     }
 
@@ -69,18 +110,33 @@ public class PortalManager : MonoBehaviour
     }
 
     //Method to spawn the correct portal as a child of the wall.
-    public void SpawnPortal(GameObject sender, PointerEventArgs e)
+    public void SpawnPortal(object sender, PointerEventArgs e)
     {
         //If the right hand shot...
-        if (GameObject.ReferenceEquals(sender, RightHand)){
+        if (e.fromInputSource == Valve.VR.SteamVR_Input_Sources.RightHand) {
+            //Set color back to gray
+            if(ParentRedPortal != null)
+            {
+                rendererParentRed.material = matWall;
+            }
             ParentRedPortal = e.target.gameObject;
+            rendererParentRed = ParentRedPortal.GetComponentInChildren<MeshRenderer>();
+            rendererParentRed.material = matRed;
+
             //Destroy current redportal
             Destroy(RedPortal);
             //Instantiate portal as a child of the parent wall;
             RedPortal = Instantiate(prefabRedPortal,ParentRedPortal.transform);
-        } else if(GameObject.ReferenceEquals(sender, LeftHand))
+        } else if(e.fromInputSource == Valve.VR.SteamVR_Input_Sources.LeftHand)
         {
+            //Set color back to gray
+            if (ParentBluePortal != null)
+            {
+                rendererParentBlue.material = matWall;
+            }
             ParentBluePortal = e.target.gameObject;
+            rendererParentBlue = ParentBluePortal.GetComponentInChildren<MeshRenderer>();
+            rendererParentBlue.material = matBlue;
             //Destroy current blueportal
             Destroy(BluePortal);
             //Instantiate portal as a child of the parent wall;
