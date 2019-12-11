@@ -1060,7 +1060,7 @@ public class ArmSwinger : MonoBehaviour
                         {
                             headsetSideRayOriginXZ = headsetCenterRaycastHitHistoryPrevention[0].point;
                         }
-
+                        //JORDI
                         // Raise the result to match the height of the headset
                         Vector3 headsetSideRayOrigin = headsetSideRayOriginXZ + new Vector3(0f, Head.position.y, 0f);
 
@@ -1317,7 +1317,7 @@ public class ArmSwinger : MonoBehaviour
 
     public void triggerRewind(PreventionReason reason = PreventionReason.MANUAL)
     {
-
+        /*
         currentPreventionReason = reason;
 
         if (reason == PreventionReason.HEADSET)
@@ -1359,7 +1359,7 @@ public class ArmSwinger : MonoBehaviour
                     }
                 }
             }
-        }
+        }*/
     }
 
     // Helper function for the Invoke() in triggerRewind, since Invoke doesn't support any parameters in called functions

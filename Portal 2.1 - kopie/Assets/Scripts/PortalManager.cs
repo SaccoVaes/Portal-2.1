@@ -48,7 +48,6 @@ public class PortalManager : MonoBehaviour
         {
             InitialisePortals();
         }
-
     }
 
     //Method for checking if both portals are active. If only one, or none are active, the portals should not be activated.
