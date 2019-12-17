@@ -43,11 +43,13 @@ public class LaserPointerV2 : MonoBehaviour
         if (ActivateRaycast == null)
             Debug.LogError("No ui interaction action has been set on this component.");
 
-        holder = new GameObject();
-        holder.transform.parent = this.transform;
-        holder.transform.localPosition = Vector3.zero;
-        holder.transform.localRotation = Quaternion.identity;
 
+            holder = new GameObject();
+            holder.transform.parent = this.transform;
+            holder.transform.localPosition = Vector3.zero;
+            holder.transform.localRotation = Quaternion.identity;
+
+        
         pointer = GameObject.CreatePrimitive(PrimitiveType.Cube);
         pointer.transform.parent = holder.transform;
         pointer.transform.localScale = new Vector3(thickness, thickness, 100f);

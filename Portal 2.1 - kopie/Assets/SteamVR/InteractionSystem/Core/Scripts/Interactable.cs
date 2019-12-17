@@ -86,12 +86,13 @@ namespace Valve.VR.InteractionSystem
             skeletonPoser = GetComponent<SteamVR_Skeleton_Poser>();
         }
 
+
         protected virtual void Start()
         {
             highlightMat = (Material)Resources.Load("SteamVR_HoverHighlight", typeof(Material));
 
             if (highlightMat == null)
-                Debug.LogError("<b>[SteamVR Interaction]</b> Hover Highlight Material is missing. Please create a material named 'SteamVR_HoverHighlight' and place it in a Resources folder");
+                Debug.LogError("<b>[SteamVR  Interaction]</b> Hover Highlight Material is missing. Please create a material named 'SteamVR_HoverHighlight' and place it in a Resources folder");
 
             if (skeletonPoser != null)
             {

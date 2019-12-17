@@ -377,8 +377,8 @@ public class ArmSwinger : MonoBehaviour
         preventFallingMaxAnglePlayerCanFall += .005f;
 
         // Seed the initial previousLocalPositions
-        leftControllerPreviousLocalPosition = LeftHandPose.localPosition; //leftControllerGameObject.transform.localPosition;
-        rightControllerPreviousLocalPosition = RightHandPose.localPosition; //rightControllerGameObject.transform.localPosition;
+        leftControllerPreviousLocalPosition = LeftHandPose.position; //leftControllerGameObject.transform.localPosition;
+        rightControllerPreviousLocalPosition = RightHandPose.position; //rightControllerGameObject.transform.localPosition;
 
         seedSavedPositions();
 
@@ -436,8 +436,8 @@ public class ArmSwinger : MonoBehaviour
         }
 
         // Save the current controller positions for our use
-        leftControllerLocalPosition = LeftHandPose.localPosition; //leftControllerGameObject.transform.localPosition;
-        rightControllerLocalPosition = RightHandPose.localPosition; //rightControllerGameObject.transform.localPosition;
+        leftControllerLocalPosition = LeftHandPose.position; //leftControllerGameObject.transform.localPosition;
+        rightControllerLocalPosition = RightHandPose.position; //rightControllerGameObject.transform.localPosition;
 
 
 
@@ -457,8 +457,8 @@ public class ArmSwinger : MonoBehaviour
         }
 
         // Save the current controller positions for next frame
-        leftControllerPreviousLocalPosition = LeftHandPose.localPosition; //leftControllerGameObject.transform.localPosition;
-        rightControllerPreviousLocalPosition = RightHandPose.localPosition; //rightControllerGameObject.transform.localPosition;
+        leftControllerPreviousLocalPosition = LeftHandPose.position; //leftControllerGameObject.transform.localPosition;
+        rightControllerPreviousLocalPosition = RightHandPose.position; //rightControllerGameObject.transform.localPosition;
 
         // Only copy safe spots for push backs
         if (!outOfBounds && !wallClipThisFrame && !rewindThisFrame)
@@ -738,7 +738,7 @@ public class ArmSwinger : MonoBehaviour
         else if (leftButtonPressed)
         {
             // The rotation is the rotation of the left controller
-            rotation = LeftHandPose.localRotation; // .transform.rotation;
+            rotation = LeftHandPose.rotation; // .transform.rotation;
 
             // Find the change in controller position since last Update()
             float leftControllerChange = Vector3.Distance(leftControllerPreviousLocalPosition, leftControllerLocalPosition);
@@ -764,7 +764,7 @@ public class ArmSwinger : MonoBehaviour
         else if (rightButtonPressed)
         {
             // The rotation is the rotation of the right controller
-            rotation = RightHandPose.localRotation; //rightControllerGameObject.transform.rotation;
+            rotation = RightHandPose.rotation; //rightControllerGameObject.transform.rotation;
 
             // Find the change in controller position since last Update()
             float rightControllerChange = Vector3.Distance(rightControllerPreviousLocalPosition, rightControllerLocalPosition);
@@ -1803,7 +1803,7 @@ public class ArmSwinger : MonoBehaviour
     // Returns the average rotation of the two controllers
     Quaternion determineAverageControllerRotation()
     {
-        return averageRotation(LeftHandPose.localRotation, RightHandPose.localRotation);
+        return averageRotation(LeftHandPose.rotation, RightHandPose.rotation);
     }
 
     float smoothedControllerMovement(LinkedList<float> controllerMovementHistory)

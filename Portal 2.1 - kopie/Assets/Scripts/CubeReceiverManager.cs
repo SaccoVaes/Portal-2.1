@@ -8,18 +8,18 @@ using UnityEngine.Events;
 /// </summary>
 public class CubeReceiverManager : MonoBehaviour
 {
-    //Reference to animation components.
-    public Animation CubePressed;
+    //References to components to change the cube receiver.
+    public Animation AnimationCubeReceiver;
     public MeshRenderer Meshrenderer;
     public Material RedReceiverMat;
     public Material GreenReceiverMat;
 
-    public UnityEvent<GameObject> OnButtonPressed;
+    //Unity Events, so i can specify the action in the inspector.
+    public UnityEvent OnButtonPressed;
     public UnityEvent OnButtonStay;
     public UnityEvent OnButtonReleased;
 
-    //Reference to the door components.
-    public door door;
+    private int index;
 
     public void Start()
     {
@@ -29,7 +29,13 @@ public class CubeReceiverManager : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        Meshrenderer.material = GreenReceiverMat;
+        if (collision.collider.CompareTag("Interactable") || collision.collider.CompareTag("Player"))
+        {
+            Meshrenderer.material = GreenReceiverMat;
+            AnimationCubeReceiver.Play("ButtonP");
+            OnButtonPressed.Invoke();
+        }
+        
     }
 
     public void OnCollisionStay(Collision collision)
@@ -37,8 +43,17 @@ public class CubeReceiverManager : MonoBehaviour
         
     }
 
+    //When the cube or player ends the collision...
     public void OnCollisionExit(Collision collision)
     {
-        Meshrenderer.material = RedReceiverMat;
+        if (collision.collider.CompareTag("Interactable") || collision.collider.CompareTag("Player"))
+        {
+            //Changes to cube receiver itself.
+            Meshrenderer.material = RedReceiverMat;
+            //AnimationCubeReceiver.Play("ButtonLifted");
+
+            //Invoke the UnityEvent.
+            OnButtonReleased.Invoke();
+        }
     }
 }

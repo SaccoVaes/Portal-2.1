@@ -22,9 +22,9 @@ public class PortalManager : MonoBehaviour
     //References to materials to set the wall behind the portals.
     private MeshRenderer rendererParentBlue;
     private MeshRenderer rendererParentRed;
-    public Material matBlue;
-    public Material matRed;
-    public Material matWall;
+    public Material MatBlue;
+    public Material MatRed;
+    public Material MatWall;
 
     private PortalDoorCollideDetection PortalDetectionPortalBlue;
     private PortalDoorCollideDetection PortalDetectionPortalRed;
@@ -34,7 +34,7 @@ public class PortalManager : MonoBehaviour
     public SteamVR_LaserPointer laserPointer;
     public void Start()
     {
-        laserPointer.PointerOut += SpawnPortal;
+        //laserPointer.PointerOut += SpawnPortal;
     }
 
     //When the player releases, check if the portal can be spawned.
@@ -73,8 +73,8 @@ public class PortalManager : MonoBehaviour
         StereoRendererPortalRed.shouldRender = true;
 
         //Set the color of the parent wall to x material;
-        rendererParentBlue.material = matBlue;
-        rendererParentRed.material = matRed;
+        rendererParentBlue.material = MatBlue;
+        rendererParentRed.material = MatRed;
 
         //Set the portal Detection variables, so the player can teleport to its destination on contact.
         PortalDetectionPortalBlue = BluePortal.GetComponentInChildren<PortalDoorCollideDetection>();
@@ -116,11 +116,11 @@ public class PortalManager : MonoBehaviour
             //Set color back to gray
             if(ParentRedPortal != null)
             {
-                rendererParentRed.material = matWall;
+                rendererParentRed.material = MatWall;
             }
             ParentRedPortal = e.target.gameObject;
             rendererParentRed = ParentRedPortal.GetComponentInChildren<MeshRenderer>();
-            rendererParentRed.material = matRed;
+            rendererParentRed.material = MatRed;
 
             //Destroy current redportal
             Destroy(RedPortal);
@@ -131,11 +131,11 @@ public class PortalManager : MonoBehaviour
             //Set color back to gray
             if (ParentBluePortal != null)
             {
-                rendererParentBlue.material = matWall;
+                rendererParentBlue.material = MatWall;
             }
             ParentBluePortal = e.target.gameObject;
             rendererParentBlue = ParentBluePortal.GetComponentInChildren<MeshRenderer>();
-            rendererParentBlue.material = matBlue;
+            rendererParentBlue.material = MatBlue;
             //Destroy current blueportal
             Destroy(BluePortal);
             //Instantiate portal as a child of the parent wall;
