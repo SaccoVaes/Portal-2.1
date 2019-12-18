@@ -8,7 +8,10 @@ public class ArmSwinger : MonoBehaviour
 {
 
     /***** CLASS VARIABLES *****/
-
+    [SerializeField]
+    private bool _IsRightControllerBusy;
+    [SerializeField]
+    private bool _IsLeftControllerBusy;
     /** Inspector Variables **/
 
     // ReadMe Location
@@ -314,7 +317,7 @@ public class ArmSwinger : MonoBehaviour
     public Transform RightHandPose;
     public Transform LeftHandPose;
 
-   
+
 
     public SteamVR_Action_Single Squeeze;
     public SteamVR_Action_Boolean TriggerPull;
@@ -332,6 +335,10 @@ public class ArmSwinger : MonoBehaviour
 
     // Camera Rig scaling
     private float cameraRigScaleModifier = 1.0f;
+
+    //public override void OnAttachedToHand(){
+        
+    //}
 
     public void AssignControllers(Valve.VR.InteractionSystem.Player player)
     {
@@ -735,7 +742,7 @@ public class ArmSwinger : MonoBehaviour
 
             return true;
         }
-        else if (leftButtonPressed)
+        else if (leftButtonPressed && IsLeftControllerBusy) //Sacco
         {
             // The rotation is the rotation of the left controller
             rotation = LeftHandPose.rotation; // .transform.rotation;
@@ -761,7 +768,7 @@ public class ArmSwinger : MonoBehaviour
 
             return true;
         }
-        else if (rightButtonPressed)
+        else if (rightButtonPressed && IsRightControllerBusy) //Sacco
         {
             // The rotation is the rotation of the right controller
             rotation = RightHandPose.rotation; //rightControllerGameObject.transform.rotation;
@@ -2125,6 +2132,32 @@ public class ArmSwinger : MonoBehaviour
             {
                 setupHeadsetCollider();
             }
+        }
+    }
+
+
+    public bool IsLeftControllerBusy
+    {
+        get
+        {
+            return _IsLeftControllerBusy;
+        }
+
+        set
+        {
+            _IsLeftControllerBusy = value;
+        }
+    }
+    public bool IsRightControllerBusy
+    {
+        get
+        {
+            return _IsRightControllerBusy;
+        }
+
+        set
+        {
+            _IsLeftControllerBusy = value;
         }
     }
 

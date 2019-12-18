@@ -31,8 +31,9 @@ public class CubeReceiverManager : MonoBehaviour
     {
         if (collision.collider.CompareTag("Interactable") || collision.collider.CompareTag("Player"))
         {
+            index++;
             Meshrenderer.material = GreenReceiverMat;
-            AnimationCubeReceiver.Play("ButtonP");
+            AnimationCubeReceiver.Play("ButtonPressed");
             OnButtonPressed.Invoke();
         }
         
@@ -48,12 +49,21 @@ public class CubeReceiverManager : MonoBehaviour
     {
         if (collision.collider.CompareTag("Interactable") || collision.collider.CompareTag("Player"))
         {
-            //Changes to cube receiver itself.
-            Meshrenderer.material = RedReceiverMat;
-            //AnimationCubeReceiver.Play("ButtonLifted");
+            if(index > 1)
+            {
+                index--;
+            }
+            else
+            {
+                index--;
+                //Changes to cube receiver itself.
+                Meshrenderer.material = RedReceiverMat;
+                AnimationCubeReceiver.Play("ButtonLifted");
 
-            //Invoke the UnityEvent.
-            OnButtonReleased.Invoke();
+                //Invoke the UnityEvent.
+                OnButtonReleased.Invoke();
+            }
+         
         }
     }
 }

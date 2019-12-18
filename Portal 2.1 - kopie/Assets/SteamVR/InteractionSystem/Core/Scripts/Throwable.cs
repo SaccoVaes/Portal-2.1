@@ -69,7 +69,6 @@ namespace Valve.VR.InteractionSystem
             interactable = GetComponent<Interactable>();
 
 
-
             rigidbody = GetComponent<Rigidbody>();
             rigidbody.maxAngularVelocity = 50.0f;
 
@@ -136,6 +135,10 @@ namespace Valve.VR.InteractionSystem
         //-------------------------------------------------
         protected virtual void OnAttachedToHand( Hand hand )
 		{
+            if(hand.handType == SteamVR_Input_Sources.RightHand)
+            {
+
+            }
             //Debug.Log("<b>[SteamVR Interaction]</b> Pickup: " + hand.GetGrabStarting().ToString());
 
             hadInterpolation = this.rigidbody.interpolation;

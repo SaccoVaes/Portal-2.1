@@ -16,6 +16,7 @@ TagManager:
   - Portal
   - LeftHand
   - RightHand
+  - Interactable
   layers:
   - Default
   - TransparentFX

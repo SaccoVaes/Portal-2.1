@@ -16,4 +16,9 @@ void OnTriggerExit ( Collider obj  ){
 	thedoor= GameObject.FindWithTag("SF_Door");
 	thedoor.GetComponent<Animation>().Play("close");
 }
+
+    public void SetDoorEnabled(bool b)
+    {
+        isEnabled = b;
+    }
 }
