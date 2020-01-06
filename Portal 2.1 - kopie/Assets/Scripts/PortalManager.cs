@@ -85,7 +85,6 @@ public class PortalManager : MonoBehaviour
         PortalDetectionPortalBlue.portalManger = Portalset;
         PortalDetectionPortalRed.portalManger = Portalset;
 
-
     }
 
     //Method for checking if the portal spawn requirements are met.
