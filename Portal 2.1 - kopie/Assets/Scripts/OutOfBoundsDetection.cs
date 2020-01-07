@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class OutOfBoundsDetection : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Transform RespawnPoint;
+    private GameObject Player;
+    //private bool IsRunning;
 
-    // Update is called once per frame
-    void Update()
+    public void Start()
     {
-        
+        Player = GameObject.Find("Player");
+    }
+    public void OntriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Player.transform.position = RespawnPoint.position;
+        }
+       
     }
 }
